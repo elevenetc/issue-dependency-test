@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.getstream.sdk.chat.Chat
 import okhttp3.MultipartBody.Companion.FORM
 import okhttp3.MultipartBody.Part.Companion.createFormData
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,5 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         val part = createFormData("name", "value")
         val form = FORM
+        val toMediaTypeOrNull = "png".toMediaTypeOrNull()
     }
 }
