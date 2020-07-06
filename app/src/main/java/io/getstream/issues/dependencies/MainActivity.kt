@@ -1,8 +1,10 @@
 package io.getstream.issues.dependencies
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.getstream.sdk.chat.Chat
+import okhttp3.MultipartBody.Companion.FORM
+import okhttp3.MultipartBody.Part.Companion.createFormData
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,5 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val chatBuilder = Chat.Builder("", this)
+
+        val part = createFormData("name", "value")
+        val form = FORM
     }
 }
